@@ -14,6 +14,7 @@ public class PracticaCertamenIII {
 
     public static void main(String[] args) {
         Universidada U = new Universidada();
+        Universidada Uni = new Universidada();
         Carreras C = new Carreras();
         Scanner entrada = new Scanner(System.in);
         Scanner opcion = new Scanner(System.in);
@@ -29,6 +30,7 @@ public class PracticaCertamenIII {
             System.out.println("5 Eliminar alumno");
             System.out.println("6 Modificar datos del alumno");
             System.out.println("7 Mostrar Alumnos");
+            System.out.println("0 Salir");
             opcion1 = opcion.nextInt();
             
             switch(opcion1){
@@ -95,9 +97,17 @@ public class PracticaCertamenIII {
                     U.modificarDatosAlumno(alumnoID);
                     break;
                 case 7:
-                    System.out.println("Datos de alumnos");
+                    int i;
+                    System.out.println("Datos de alumnos ");
+                    
+                    for(Carreras carrerita : U.carreritas){
+                        System.out.println("Carrera "+carrerita.getNombre());
+                        for(Alumnos alumnito : carrerita.getEstudiantes()){
+                            System.out.println("Nombre alumno "+alumnito.getNombre());
+                            System.out.println("Rut alumno "+alumnito.getRut());
+                        }
+                    }
 
-                    C.mostrarAlumnos();
                     break;
                 default:
                         

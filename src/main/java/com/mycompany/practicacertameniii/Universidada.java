@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public class Universidada {
     
+    Carreras C = new Carreras();
     ArrayList <Carreras> carreritas = new ArrayList <>();
 
     public ArrayList<Carreras> getCarreritas() {
@@ -111,7 +112,7 @@ public class Universidada {
                         System.out.println("Que desea cambiar?");
                         System.out.println("1- Nombre");
                         System.out.println("2- RUT?");
-                        System.out.println("3- Carrera");
+                        System.out.println("0- Salir");
                         opcion1 = opcion.nextInt();
                         
                         switch(opcion1){
@@ -126,12 +127,17 @@ public class Universidada {
                 }while(opcion1 != 0);
             }
         }
-        
-        
-        
-        
+        }
     }
     
     
+    void imprimirAlumnos(){
+        System.out.println("slkfjdfgdl");
+
+        for(Alumnos alumno : C.getEstudiantes()){
+            System.out.println("Nombre alumno "+alumno.getNombre());
+            System.out.println("Nombre alumno "+alumno.getRut());
+        }
+    }
 }
-}
+    
